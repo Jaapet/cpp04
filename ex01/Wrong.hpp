@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Wrong.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 14:41:52 by ndesprez          #+#    #+#             */
-/*   Updated: 2024/01/08 23:37:44 by ndesprez         ###   ########.fr       */
+/*   Created: 2024/01/08 22:33:42 by ndesprez          #+#    #+#             */
+/*   Updated: 2024/01/08 23:14:39 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef WRONG_H
+# define WRONG_H
 
 # include <iostream>
 
-class Animal
+class WrongAnimal
 {
 protected:
 	std::string	_type;
 public:
-	Animal();
-	Animal(Animal const &instance);
-	Animal	&operator=(Animal const &instance);
-	virtual ~Animal();
+	WrongAnimal();
+	WrongAnimal(WrongAnimal const &instance);
+	WrongAnimal	&operator=(WrongAnimal const &instance);
+	virtual ~WrongAnimal();
 
-	Animal(std::string const &type);
+	void	makeSound() const;
+};
 
-	std::string const	&getType() const;
+class WrongCat : public WrongAnimal
+{
+public:
+	WrongCat();
+	WrongCat(WrongCat const &instance);
+	WrongCat	&operator=(WrongCat const &instance);
+	virtual ~WrongCat();
 
-	virtual void	makeSound() const;
+	void	makeSound() const;
 };
 
 #endif

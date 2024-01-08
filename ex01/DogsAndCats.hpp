@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   DogsAndCats.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndesprez <ndesprez@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 14:41:52 by ndesprez          #+#    #+#             */
-/*   Updated: 2024/01/08 23:37:44 by ndesprez         ###   ########.fr       */
+/*   Created: 2024/01/08 22:33:42 by ndesprez          #+#    #+#             */
+/*   Updated: 2024/01/08 23:39:31 by ndesprez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef DOGSANDCATS_H
+# define DOGSANDCATS_H
 
 # include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Animal
+class Dog : public Animal
 {
-protected:
-	std::string	_type;
+private:
+	Brain	*_brain;
 public:
-	Animal();
-	Animal(Animal const &instance);
-	Animal	&operator=(Animal const &instance);
-	virtual ~Animal();
+	Dog();
+	Dog(Dog const &instance);
+	Dog	&operator=(Dog const &instance);
+	virtual ~Dog();
 
-	Animal(std::string const &type);
+	virtual void	makeSound() const;
+};
 
-	std::string const	&getType() const;
+class Cat : public Animal
+{
+private:
+	Brain	*_brain;
+public:
+	Cat();
+	Cat(Cat const &instance);
+	Cat	&operator=(Cat const &instance);
+	virtual ~Cat();
 
 	virtual void	makeSound() const;
 };
